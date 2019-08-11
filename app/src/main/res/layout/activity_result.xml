@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:visibility="invisible">
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Карты с заданым номером не найдено"
+            android:layout_centerVertical="true"
+            android:textAlignment="center"
+            android:textSize="36dp" />
+        <Button
+            android:id="@+id/backNotFound"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OpenMain"
+            android:text="Назад" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/correct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_centerVertical="true">
+
+
+        <TextView
+            android:id="@+id/headlineName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Имя клиента"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/headlineBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Остаток на счету"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#4CAF50"
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/headlineCompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Компания"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#3F51B5"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/back"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:onClick="OpenMain"
+            android:text="Назад"
+            android:textColor="#ECFF94" />
+
+    </LinearLayout>
+</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
