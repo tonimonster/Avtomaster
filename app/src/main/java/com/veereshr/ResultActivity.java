@@ -11,12 +11,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.sql.Array;
 import java.sql.SQLData;
+import java.util.Arrays;
 
 public class ResultActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) throws ArrayIndexOutOfBoundsException {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         Intent intent = getIntent();
@@ -25,19 +27,28 @@ public class ResultActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.name);
         TextView balance = findViewById(R.id.balance);
         TextView company = findViewById(R.id.company);
-        String[] data = intent.getStringArrayExtra(MainActivity.MESSAGE_NAME);
+        String[] data = new String[3];
+
+        data = intent.getStringArrayExtra(MainActivity.MESSAGE_NAME);
+
         String s = "Хуйню";
-        if (data[0].indexOf(s) != -1){
-           error.setVisibility(View.VISIBLE);
-           correct.setVisibility(View.INVISIBLE);
+        if (data.length < 2) {
+            error.setVisibility(View.VISIBLE);
+            correct.setVisibility(View.INVISIBLE);
+            TextView errorTextView = findViewById(R.id.textView5);
+            errorTextView.setText("Нет соединения с базой");
+        } else if (data[0].indexOf(s) != -1) {
+            error.setVisibility(View.VISIBLE);
+            correct.setVisibility(View.INVISIBLE);
+        } else {
+            name.setText(data[0]);
+            balance.setText(data[1]);
+            company.setText(data[2]);
         }
-        name.setText(data[0]);
-        balance.setText(data[1]);
-        company.setText(data[2]);
     }
 
     public void OpenMain(View view) {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
