@@ -54,7 +54,7 @@ public class ProgressFragment extends Fragment {
             public void onClick(View v) {
 
                 final String idNumber = number.getText().toString();
-                final String url = "http://10.0.2.2:8080/ConnectSQL/?id="+idNumber;
+                final String url = "http://192.168.25.121:8080/ConnectSQL/?id="+idNumber;
                 //final String url = "http://helpdesk.automaster.od.ua/app/appNewVersion/?name=2200000000118";
                     //textView.setText(url);
                     //contentView.setText("Загрузка...");

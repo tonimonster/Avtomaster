@@ -26,7 +26,8 @@ public class ResultActivity extends AppCompatActivity {
         TextView balance = findViewById(R.id.balance);
         TextView company = findViewById(R.id.company);
         String[] data = intent.getStringArrayExtra(MainActivity.MESSAGE_NAME);
-        if((data[0]==null) || (data[0]=="")){
+        String s = "Хуйню";
+        if (data[0].indexOf(s) != -1){
            error.setVisibility(View.VISIBLE);
            correct.setVisibility(View.INVISIBLE);
         }
